@@ -1,6 +1,12 @@
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
+  background-color:rgb(93, 242, 244);
+}
+
+header {
+  color: black;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 textarea {
@@ -10,6 +16,7 @@ textarea {
   color: #000000;
   border-left: 1px solid black;
   padding: 10px;
+  font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .description {
@@ -25,9 +32,10 @@ textarea {
 }
 
 .hour {
-  background-color: #ffffff;
+  background-color: #f7b0f1;
   color: #000000;
   border-top: 1px dashed #000000;
+  font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .past {
@@ -49,8 +57,8 @@ textarea {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: #06aed5;
-  color: white;
+  background-color: #f7b0f1;
+  color: rgb(0, 0, 0);
 }
 
 .saveBtn i:hover {
