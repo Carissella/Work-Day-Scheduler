@@ -2,17 +2,47 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 let saveButton = $('.saveBtn');
+let currentHour = dayjs().format('HH')
 let today = dayjs()
 $('#currentDay').text(today.format('dddd, MMMM D YYYY'));
+let descriptions = document.querySelectorAll('.description')
+let rows = document.querySelectorAll('.time-block')
 let future = $('.future');
 let present = $('.present');
 let past = $('.past');
 
 $(function () {
   saveButton.on('click', function () {
-    let descriptions = $('.description');
-   localStorage.setItem(descriptions.value);
+    localStorage.setItem($(this).attr('id'), $(this).siblings('textarea').val());
   });
+
+  for (let i = 0; i < descriptions.length; i++) {
+    descriptions[i].value = localStorage.getItem(i);
+  }
+
+
+  console.log(currentHour);
+  for (let i = 1; i < rows.length; i++) {
+    if
+    (rows[i].id < currentHour) {
+    rows[i].classList.add('past');
+  }
+  else if
+    (rows[i].id > currentHour) {
+    rows[i].classList.add('future');
+  }
+  else if
+      (parseInt(rows[i].id) == currentHour) {
+        rows[i].classList.add('present');
+      }
+  }
+
+
+
+
+
+
+
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -27,7 +57,7 @@ $(function () {
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
   //
-  
+
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
